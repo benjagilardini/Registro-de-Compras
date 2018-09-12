@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-<table>
-	<thead>
-        <tr>
-            <th>Fecha</th>
-            <th>Compra</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for rg in Registros %}
-            <tr>
-            	<td>{{ rg.fecha }}</td>
-            	<td>{{ rg.compra }}</td>
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="container">
+    <div class="card">
+        <table class="highlight">
+        	<thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Compra</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rg in Registros %}
+                    <tr>
+                    	<td>{{ rg.fecha }}</td>
+                    	<td>{{ rg.compra }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>
