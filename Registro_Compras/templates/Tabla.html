@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<table>
+	<thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Compra</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for rg in Registros %}
+            <tr>
+            	<td>{{ rg.fecha }}</td>
+            	<td>{{ rg.compra }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
