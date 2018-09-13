@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from Registro_Compras.views import tabla
+from Registro_Compras.views import tabla, post_new
 
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',tabla, name='index'),
+    url(r'^post/',post_new, name='post'),
 ]
