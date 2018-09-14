@@ -8,7 +8,7 @@ from .forms import PostForm
 
 def tabla(request):
     context = {}
-    context['Registros'] = Registros.objects.all()[::-1]
+    context['Registros'] = Registros.objects.all().filter(archive=False)[::-1]
     context['form'] = PostForm()
     return render(request, 'Tabla.html', context)
 
@@ -21,4 +21,10 @@ def post_new(request):
 def delete(request, id):
 	compra = Registros.objects.get(pk=id)
 	compra.delete()
+	return redirect('index')
+
+def archive(request, id):
+	compra = Registros.objects.get(pk=id)
+	compra.archive = True
+	compra.save()
 	return redirect('index')

@@ -7,3 +7,4 @@ from django.db import models
 class Registros(models.Model):
 	fecha = models.DateTimeField(auto_now_add=True)
 	compra = models.CharField(max_length=100)
+	archive = models.BooleanField(default=False)
