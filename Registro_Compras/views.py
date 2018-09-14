@@ -17,3 +17,8 @@ def post_new(request):
 	post_new = Registros(compra=compra)
 	post_new.save()
 	return redirect('index')
+
+def delete(request, id):
+	compra = Registros.objects.get(pk=id)
+	compra.delete()
+	return redirect('index')
